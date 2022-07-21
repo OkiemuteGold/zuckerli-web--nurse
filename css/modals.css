@@ -1,4 +1,5 @@
 #productBasketModal {
+  max-height: 84vh;
   top: 100px;
 }
 
@@ -8,12 +9,18 @@
 }
 
 .accordion-item:not(:last-child) {
-  margin-bottom: 1rem;
+  margin-bottom: 0.875rem;
 }
 
 .accordion-header {
   margin-bottom: 0;
   border-bottom: none;
+}
+
+.modal-title {
+  font-size: var(--font16);
+  line-height: 24px;
+  text-transform: uppercase;
 }
 
 .accordion-button {
@@ -34,6 +41,9 @@
 
 .accordion-button::after,
 .accordion-button:not(.collapsed)::after {
+  width: 1rem;
+  height: 1rem;
+  background-size: 1rem;
   display: none;
 }
 
@@ -72,6 +82,13 @@
 }
 
 .accordion-button.collapsed .accordion-icon::before {
+  -o-transition: 0.075s linear;
+  -moz-transition: 0.075s linear;
+  -webkit-transition: 0.075s linear;
+  transition: 0.075s linear;
+}
+
+.accordion-button.collapsed .accordion-icon::before {
   -o-transform: rotate(-90deg);
   -ms-transform: rotate(-90deg);
   -moz-transform: rotate(-90deg);
@@ -94,6 +111,7 @@
   font-weight: 400;
   line-height: 24px;
   padding: 0;
+  overflow-y: auto;
 }
 
 .accordion-body .faq_question:not(:last-of-type) {
@@ -120,7 +138,7 @@
 }
 
 .accordion .quantity_select select {
-  min-width: 42px;
+  min-width: 45px;
   min-height: 28px;
   padding: 0 0.125rem 0;
 }
@@ -129,6 +147,7 @@
 .delete_button {
   display: flex;
   justify-content: flex-end;
+  margin-top: 0;
 }
 
 .delete_button button {
@@ -139,4 +158,67 @@
   line-height: initial;
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius4);
+}
+
+.modal-footer button {
+  font-size: var(--font14);
+  background-color: var(--white);
+  color: var(--primaryColor);
+  border-color: var(--primaryColor);
+  border-radius: var(--radius4);
+}
+
+.modal-footer .checkout_btn {
+  background-color: var(--primaryColor);
+  color: var(--white);
+}
+
+.modal-footer button:hover {
+  border-color: #767676;
+}
+
+.modal .btn_close {
+  font-size: var(--font16);
+  font-family: var(--fontLibreFranklin);
+  font-weight: 500;
+  background: transparent;
+  color: var(--textDark);
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.modal .btn_close:hover {
+  background: var(--lightestGray);
+  color: var(--secondaryColor);
+}
+
+@media screen and (max-width: 850px) {
+  #productBasketModal {
+    top: 45px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .accordion .quantity_select,
+  .delete_button {
+    justify-content: flex-start;
+    margin-top: 1rem;
+  }
+
+  .accordion .product_image img {
+    max-height: 120px;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #productBasketModal {
+    top: 65px;
+  }
 }
