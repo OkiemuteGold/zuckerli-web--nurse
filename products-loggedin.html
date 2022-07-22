@@ -27,6 +27,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/product-basket.css">
+    <link rel="stylesheet" href="css/floating-widget.css">
+    <link rel="stylesheet" href="css/modals.css">
+    <link rel="stylesheet" href="css/accordion.css">
     
     
     <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
@@ -100,6 +103,7 @@
                                 </span>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                     <li><a class="dropdown-item" href="orders.html">My Orders</a></li>
+                                    <li><a class="dropdown-item" href="patient-list.html">Patient List</a></li>
                                     <li><a class="dropdown-item" href="javascript:void(0)">Logout</a></li>
                                 </ul>
                             </div>
@@ -183,6 +187,16 @@
                 </div>
         
                 <div class="all_products">
+                    <!-- floating widget -->
+                    <nav class="fixed_nav">
+                        <div class="buttons">
+                            <button id="patientA" class="tab_btn active">Patient A</button>
+                            <button id="patientB" class="tab_btn">Patient B</button>
+                            <button id="patientC" class="tab_btn">Patient C</button>
+                            <button id="newPatient" class="tab_btn" data-bs-toggle="modal" data-bs-target="#newPatientModal">New Patient</button>
+                        </div>
+                    </nav>
+
                     <div class="product_search_wrapper">
                         <div class="product_search">
                             <div class="product_search_input">
@@ -196,7 +210,7 @@
                             </div>
                         </div>
         
-                        <div class="product_cart custom_label" aria-label="Proceed to checkout">
+                        <div class="product_cart custom_label" aria-label="Proceed to checkout" data-bs-toggle="modal" data-bs-target="#productBasketModal">
                             <div class="d-flex">
                                 <img src="/images/shopping-cart.png" alt="product cart">
                                 <div class="number_cart_item">2</div>
@@ -1438,6 +1452,385 @@
 
         <!-- footer -->
 
+
+        <!-- MODALS -->
+
+        <!-- Product basket modal -->
+        
+        <div class="modal fade" id="productBasketModal" tabindex="-1" aria-labelledby="productBasketModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="productBasketModalLabel">Products in cart</h4>
+                        <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="accordion" id="accordionProductBasket">
+                            <div id="patientA" class="accordion-item">
+                                <h5 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                        aria-expanded="true" aria-controls="collapseOne">
+                                        Patient A
+                                        <span class="accordion-icon"></span>
+                                    </button>
+                                </h5>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionProductBasket">
+                                    <div class="accordion-body">
+                                        <div class="container-fluid px-2">
+                                            <div class="product_item">
+                                                <div class="row">
+                                                    <div class="col-md-2 px-0">
+                                                        <div class="product_image">
+                                                            <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                                                <img src="images/products/Product-1.png" alt="Product-1">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="product_description">
+                                                            <h3 class="mb-0">
+                                                                <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">Accu Chek Aviva</a>
+                                                            </h3>
+                                            
+                                                            <p class="mb-0">Test strips / PU 50 pcs.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="quantity_select">
+                                                            <select name="quantity" id="quantity" aria-label="select quantity">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="delete_button">
+                                                            <button aria-label="delete product">X</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product_item">
+                                                <div class="row">
+                                                    <div class="col-md-2 px-0">
+                                                        <div class="product_image">
+                                                            <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                                                <img src="images/products/Product-1.png" alt="Product-1">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="product_description">
+                                                            <h3 class="mb-0">
+                                                                <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">Accu Chek Aviva</a>
+                                                            </h3>
+                                            
+                                                            <p class="mb-0">Test strips / PU 50 pcs.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="quantity_select">
+                                                            <select name="quantity" id="quantity" aria-label="select quantity">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="delete_button">
+                                                            <button aria-label="delete product">X</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product_item">
+                                                <div class="row">
+                                                    <div class="col-md-2 px-0">
+                                                        <div class="product_image">
+                                                            <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                                                <img src="images/products/Product-1.png" alt="Product-1">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="product_description">
+                                                            <h3 class="mb-0">
+                                                                <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">Accu Chek Aviva</a>
+                                                            </h3>
+                                            
+                                                            <p class="mb-0">Test strips / PU 50 pcs.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="quantity_select">
+                                                            <select name="quantity" id="quantity" aria-label="select quantity">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="delete_button">
+                                                            <button aria-label="delete product">X</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product_item">
+                                                <div class="row">
+                                                    <div class="col-md-2 px-0">
+                                                        <div class="product_image">
+                                                            <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                                                <img src="images/products/Product-1.png" alt="Product-1">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="product_description">
+                                                            <h3 class="mb-0">
+                                                                <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">Accu Chek Aviva</a>
+                                                            </h3>
+                                            
+                                                            <p class="mb-0">Test strips / PU 50 pcs.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="quantity_select">
+                                                            <select name="quantity" id="quantity" aria-label="select quantity">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="delete_button">
+                                                            <button aria-label="delete product">X</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="patientB" class="accordion-item">
+                                <h5 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        Patient B
+                                        <span class="accordion-icon"></span>
+                                    </button>
+                                </h5>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionProductBasket">
+                                    <div class="accordion-body">
+                                        <div class="container-fluid px-2">
+                                            <div class="product_item">
+                                                <div class="row">
+                                                    <div class="col-md-2 px-0">
+                                                        <div class="product_image">
+                                                            <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                                                <img src="images/products/Product-1.png" alt="Product-1">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="product_description">
+                                                            <h3 class="mb-0">
+                                                                <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">Accu Chek Aviva</a>
+                                                            </h3>
+                                        
+                                                            <p class="mb-0">Test strips / PU 50 pcs.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="quantity_select">
+                                                            <select name="quantity" id="quantity" aria-label="select quantity">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="delete_button">
+                                                            <button aria-label="delete product">X</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product_item">
+                                                <div class="row">
+                                                    <div class="col-md-2 px-0">
+                                                        <div class="product_image">
+                                                            <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                                                <img src="images/products/Product-1.png" alt="Product-1">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="product_description">
+                                                            <h3 class="mb-0">
+                                                                <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">Accu Chek Aviva</a>
+                                                            </h3>
+                                        
+                                                            <p class="mb-0">Test strips / PU 50 pcs.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="quantity_select">
+                                                            <select name="quantity" id="quantity" aria-label="select quantity">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="delete_button">
+                                                            <button aria-label="delete product">X</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="patientC" class="accordion-item">
+                                <h5 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                        aria-expanded="false" aria-controls="collapseThree">
+                                        Patient C
+                                        <span class="accordion-icon"></span>
+                                    </button>
+                                </h5>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionProductBasket">
+                                    <div class="accordion-body">
+                                        <div class="container-fluid px-2">
+                                            <div class="product_item">
+                                                <div class="row">
+                                                    <div class="col-md-2 px-0">
+                                                        <div class="product_image">
+                                                            <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                                                <img src="images/products/Product-1.png" alt="Product-1">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="product_description">
+                                                            <h3 class="mb-0">
+                                                                <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">Accu Chek Aviva</a>
+                                                            </h3>
+                                        
+                                                            <p class="mb-0">Test strips / PU 50 pcs.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="quantity_select">
+                                                            <select name="quantity" id="quantity" aria-label="select quantity">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="delete_button">
+                                                            <button aria-label="delete product">X</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="product_item">
+                                                <div class="row">
+                                                    <div class="col-md-2 px-0">
+                                                        <div class="product_image">
+                                                            <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
+                                                                <img src="images/products/Product-1.png" alt="Product-1">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="product_description">
+                                                            <h3 class="mb-0">
+                                                                <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">Accu Chek Aviva</a>
+                                                            </h3>
+                                        
+                                                            <p class="mb-0">Test strips / PU 50 pcs.</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="quantity_select">
+                                                            <select name="quantity" id="quantity" aria-label="select quantity">
+                                                                <option value="0">0</option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="delete_button">
+                                                            <button aria-label="delete product">X</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue Shopping</button>
+                        <button type="button" class="btn btn-primary checkout_btn">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- New patient modal -->
+        <div class="modal fade" id="newPatientModal" tabindex="-1" aria-labelledby="newPatientModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="newPatientModalLabel">Add new patient</h4>
+                        <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <form>
+                                    <div class="input">
+                                        <label for="patientName">Patient Name</label>
+                                        <input type="text" name="patientName" id="patientName" required aria-required="true" placeholder="Enter patient name" aria-placeholder="Enter patient name">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary checkout_btn">Add Patient</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
     
     <!-- Mobile -->
@@ -1580,6 +1973,15 @@
                         </font>
                     </a></li>
                 <li id="rmp-menu-item-551"
+                    class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-top-level-item"
+                    role="none">
+                    <a href="patient-list.html" class="btn btn-icon btn-link rmp-menu-item-link" role="menuitem">
+                        <font style="vertical-align: inherit;">
+                            <font style="vertical-align: inherit;">Patient List</font>
+                        </font>
+                    </a>
+                </li>
+                <li id="rmp-menu-item-552"
                     class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-top-level-item"
                     role="none">
                     <a href="javascript:void(0)" class="btn btn-icon btn-link rmp-menu-item-link" role="menuitem">

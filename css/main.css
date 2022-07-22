@@ -54,6 +54,16 @@ body {
   color: var(--textLight);
 }
 
+::selection {
+  background-color: var(--primaryColorLight);
+  color: var(--white);
+}
+
+::-moz-selection {
+  background-color: var(--primaryColorLight);
+  color: var(--white);
+}
+
 h1,
 h2,
 h3,

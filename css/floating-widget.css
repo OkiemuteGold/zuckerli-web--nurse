@@ -12,6 +12,7 @@
   background: var(--white);
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   border: 1px solid var(--offWhite);
+  border-radius: var(--radius2);
 }
 
 .fixed_nav .buttons {
@@ -45,6 +46,14 @@
 
 .fixed_nav .tab_btn:not(:last-child) {
   border-bottom-color: var(--lightestGray);
+}
+
+.fixed_nav .tab_btn:first-child {
+  border-radius: var(--radius2) var(--radius2) 0 0;
+}
+
+.fixed_nav .tab_btn:last-child {
+  border-radius: 0 0 var(--radius2) var(--radius2);
 }
 
 .fixed_nav .tab_btn.active,
