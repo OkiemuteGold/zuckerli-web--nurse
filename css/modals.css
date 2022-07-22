@@ -160,12 +160,18 @@
   border-radius: var(--radius4);
 }
 
+.modal .input:last-child,
+.modal input {
+  margin-bottom: 0;
+}
+
 .modal-footer button {
   font-size: var(--font14);
   background-color: var(--white);
   color: var(--primaryColor);
   border-color: var(--primaryColor);
   border-radius: var(--radius4);
+  outline: none;
 }
 
 .modal-footer .checkout_btn {
@@ -175,6 +181,13 @@
 
 .modal-footer button:hover {
   border-color: #767676;
+}
+
+.modal-footer button:active,
+.modal-footer button:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: inherit;
 }
 
 .modal .btn_close {

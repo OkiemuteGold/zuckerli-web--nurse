@@ -1,0 +1,94 @@
+.fixed_nav {
+  min-width: 135px;
+  position: fixed;
+  left: 0.5px;
+  -o-transform: translateY(60px);
+  -ms-transform: translateY(60px);
+  -moz-transform: translateY(60px);
+  -webkit-transform: translateY(60px);
+  transform: translateY(60px);
+  top: 50%;
+  z-index: 40;
+  background: var(--white);
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  border: 1px solid var(--offWhite);
+}
+
+.fixed_nav .buttons {
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  padding: 1px;
+}
+
+.fixed_nav .tab_btn {
+  width: 100%;
+  /* font-size: var(--font12); */
+  font-weight: 500;
+  background: transparent;
+  color: var(--textLight);
+  padding: 0.375rem 0.875rem;
+  outline: none;
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: 0.3s ease-out;
+  -o-transition: 0.3s ease-out;
+  -moz-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+.fixed_nav .tab_btn:not(:last-child) {
+  border-bottom-color: var(--lightestGray);
+}
+
+.fixed_nav .tab_btn.active,
+.fixed_nav .tab_btn:hover {
+  background: var(--primaryColor);
+  color: var(--white);
+}
+
+/* input[type="checkbox"] {
+  position: relative;
+  font-weight: 300;
+  width: 100%;
+  height: 24px;
+  background: transparent;
+  margin: 0 auto 2px;
+  border: 1px solid var(--lightestGray);
+}
+
+input[type="checkbox"]::before {
+  display: none;
+}
+
+input[type="checkbox"]::after {
+  content: "Hide Tabs ▼";
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  min-width: max-content;
+  color: var(--textLight);
+  text-align: center;
+}
+
+input[type="checkbox"]:checked {
+  background: transparent;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "Show Tabs ▲";
+}
+
+input[type="checkbox"]:checked + .buttons {
+  display: none;
+} */

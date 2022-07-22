@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/product-basket.css">
+    <link rel="stylesheet" href="css/floating-widget.css">
     <link rel="stylesheet" href="css/modals.css">
     
     
@@ -174,6 +175,18 @@
                 </div>
         
                 <div class="all_products">
+                    <!-- floating widget -->
+                    <nav class="fixed_nav">
+                        <!-- <input type="checkbox" name="openPatientsTab" id="openPatientsTab"> -->
+
+                        <div class="buttons">
+                            <button id="patientA" class="tab_btn active">Patient A</button>
+                            <button id="patientB" class="tab_btn">Patient B</button>
+                            <button id="patientC" class="tab_btn">Patient C</button>
+                            <button id="newPatient" class="tab_btn" data-bs-toggle="modal" data-bs-target="#newPatientModal">New Patient</button>
+                        </div>
+                    </nav>
+                    
                     <div class="product_search_wrapper">
                         <div class="product_search">
                             <div class="product_search_input">
@@ -1430,6 +1443,8 @@
         <!-- footer -->
 
 
+        <!-- MODALS -->
+
         <!-- Product basket modal -->
         
         <div class="modal fade" id="productBasketModal" tabindex="-1" aria-labelledby="productBasketModalLabel" aria-hidden="true">
@@ -1778,7 +1793,33 @@
             </div>
         </div>
         
-        <!-- Product basket modal -->
+        <!-- New patient modal -->
+        <div class="modal fade" id="newPatientModal" tabindex="-1" aria-labelledby="newPatientModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="newPatientModalLabel">Add new patient</h4>
+                        <button type="button" class="btn_close" data-bs-dismiss="modal" aria-label="Close">X</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <form>
+                                    <div class="input">
+                                        <label for="patientName">Patient Name</label>
+                                        <input type="text" name="patientName" id="patientName" required aria-required="true" placeholder="Enter patient name" aria-placeholder="Enter patient name">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary checkout_btn">Add Patient</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
     
