@@ -233,6 +233,10 @@ ul.sub-menu li:hover {
   border: 1px solid var(--lightGray);
 }
 
+.sub_header {
+  font-size: var(--font20);
+}
+
 /* login -------- */
 .left .info_content,
 .right .info_content {

@@ -185,7 +185,44 @@
         
                 <div class="row content">
                     <div class="col-12">
-                        <div class="row"></div>
+                        <div class="row mb-4">
+                            <h2 class="sub_header">Filter By:</h2>
+
+                            <div class="col-md-4 col-lg-3">
+                                <div class="input">
+                                    <label for="selectPatient">Patient Name</label>
+                                    <select name="selectPatient" id="selectPatient" aria-placeholder="Select patient">
+                                        <option value="">Select Patient</option>
+                                        <option value="All">All</option>
+                                        <option value="Patient A">Patient A</option>
+                                        <option value="Patient B">Patient B</option>
+                                        <option value="Patient C">Patient C</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="input">
+                                    <label for="selectDoctor">Doctor Name</label>
+                                    <select name="selectDoctor" id="selectDoctor" aria-placeholder="Select doctor">
+                                        <option value="">Select Doctor</option>
+                                        <option value="All">All</option>
+                                        <option value="Doctor A">Doctor A</option>
+                                        <option value="Doctor B">Doctor B</option>
+                                        <option value="Doctor C">Doctor C</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-lg-3">
+                                <div class="input">
+                                    <label for="orderDate">Order Date</label>
+                                    <input type="date" name="orderDate" id="orderDate" aria-placeholder="Select order date">
+                                </div>
+                            </div>
+                            <div class="filter_buttons">
+                                <button id="reset_btn">Reset</button>
+                                <button id="filter_btn">Filter</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="col-12">
                         <div class="card">
@@ -241,7 +278,7 @@
                                     <div class="col-md-3">
                                         <div class="order_status mb-2 mb-md-0">
                                             <h2>
-                                                From: <span id="nurseName">Dr John</span>
+                                                From: <span id="nurseName">Dr A</span>
                                             </h2>
                                         </div>
                                     </div>
@@ -371,7 +408,7 @@
                                     <div class="col-md-3">
                                         <div class="order_status mb-2 mb-md-0">
                                             <h2>
-                                                From: <span id="nurseName">Dr John</span>
+                                                From: <span id="nurseName">Dr A</span>
                                             </h2>
                                         </div>
                                     </div>
