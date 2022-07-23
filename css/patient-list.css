@@ -1,0 +1,143 @@
+.patient_list .input input,
+.edit_icon,
+.patient_list .delete_all,
+.patient_list .delete_icon {
+  cursor: pointer;
+  -o-transition: 0.35s ease;
+  -moz-transition: 0.35s ease;
+  -webkit-transition: 0.35s ease;
+  transition: 0.35s ease;
+}
+
+.patient_list {
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.patient_list table * {
+  font-size: var(--font14);
+  line-height: initial;
+  vertical-align: middle;
+}
+
+.patient_list .table > :not(:first-child) {
+  border-top-color: var(--lightGray);
+}
+
+.patient_list table thead {
+  background: var(--lightestGray);
+  color: var(--textDark);
+  text-transform: capitalize;
+  height: initial;
+}
+
+.patient_list table thead th {
+  font-family: var(--fontMontserrat);
+  font-weight: 700;
+}
+
+.patient_list table thead th .d-md-inline-flex {
+  line-height: initial;
+  vertical-align: middle;
+}
+
+.patient_list table tbody {
+  color: var(--textDark);
+}
+
+.patient_list table thead > tr,
+.patient_list table tbody > tr {
+  height: 2.25rem;
+  vertical-align: middle;
+}
+
+.patient_list table tbody tr th {
+  color: var(--textLight);
+}
+
+.patient_list .input {
+  margin-bottom: 0;
+  max-width: 0.75rem;
+}
+
+.patient_list .input span {
+  color: var(--textLight);
+}
+
+.patient_list .dropdown-menu {
+  min-width: fit-content;
+}
+
+.patient_list .dropdown-item {
+  padding: 0.25rem 1rem;
+}
+
+.patient_list .delete_all {
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
+}
+
+.patient_list .delete_icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  opacity: 0.85;
+}
+
+.edit_icon:hover,
+.patient_list .delete_all:hover .delete_icon,
+.patient_list .delete_icon:hover {
+  opacity: 0.65;
+  -o-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  -moz-transform: scale(0.9);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+}
+
+.patient_list .buttons {
+  margin-top: 1.5rem;
+  text-align: right;
+}
+
+.patient_list button {
+  font-size: var(--font14);
+  font-weight: 500;
+  background: var(--primaryColor);
+  border-color: var(--primaryColor);
+}
+
+.patient_list button:first-child {
+  background: transparent;
+  color: var(--primaryColor);
+  margin-right: 0.25rem;
+}
+
+.patient_list button:hover {
+  background: #767676;
+  border-color: #767676;
+  color: var(--white);
+}
+
+@media screen and (max-width: 590px) {
+  .patient_list {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .patient_list .input input {
+    padding: 0.4rem 0.45rem;
+    margin-right: 0.25em;
+  }
+
+  .patient_list .buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .patient_list button:first-child {
+    margin-right: 0;
+  }
+}

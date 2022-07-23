@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zuckerli - My Orders</title>
+    <title>Zuckerli - Patient List</title>
 
     <!-- <link rel="stylesheet" href="Content/bootstrap.css"> -->
     <link rel="stylesheet" href="Content/Zstyle.css">
@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/product-basket.css">
+    <link rel="stylesheet" href="css/patient-list.css">
     
     
     <!-- The line below is only needed for old environments like Internet Explorer and Android 4.x -->
@@ -99,7 +100,7 @@
                                     Okiemute
                                 </span>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="orders.html">My Orders</a></li>
+                                    <li><a class="dropdown-item" href="orders.html">Patient List</a></li>
                                     <li><a class="dropdown-item" href="patient-list.html">Patient List</a></li>
                                     <li><a class="dropdown-item" href="javascript:void(0)">Logout</a></li>
                                 </ul>
@@ -180,309 +181,100 @@
         <div class="wrapper">
             <div class="container">
                 <div class="page_banner">
-                    <h1>My Orders</h1>
+                    <h1>Patient List</h1>
                 </div>
         
                 <div class="row content">
-                    <div class="col-12">
-                        <div class="row mb-4">
-                            <h2 class="sub_header">Filter By:</h2>
+                    <div class="col-12 patient_list">
+                        <table class="table table-responsive table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">
+                                        <div class="input agree_to_terms">
+                                            <input type="checkbox" name="selectAllPatients" id="selectAllPatients" aria-label="Select all patients">
 
-                            <div class="col-md-4 col-lg-3">
-                                <div class="input">
-                                    <label for="selectPatient">Patient Name</label>
-                                    <select name="selectPatient" id="selectPatient" aria-placeholder="Select patient">
-                                        <option value="">Select Patient</option>
-                                        <option value="All">All</option>
-                                        <option value="Patient A">Patient A</option>
-                                        <option value="Patient B">Patient B</option>
-                                        <option value="Patient C">Patient C</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-lg-3">
-                                <div class="input">
-                                    <label for="selectDoctor">Doctor Name</label>
-                                    <select name="selectDoctor" id="selectDoctor" aria-placeholder="Select doctor">
-                                        <option value="">Select Doctor</option>
-                                        <option value="All">All</option>
-                                        <option value="Doctor A">Doctor A</option>
-                                        <option value="Doctor B">Doctor B</option>
-                                        <option value="Doctor C">Doctor C</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-lg-3">
-                                <div class="input">
-                                    <label for="orderDate">Order Date</label>
-                                    <input type="date" name="orderDate" id="orderDate" aria-placeholder="Select order date">
-                                </div>
-                            </div>
-                            <div class="filter_buttons">
-                                <button id="reset_btn">Reset</button>
-                                <button id="filter_btn">Filter</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="row">
-                                    <div class="col-12 col-lg-3">
-                                        <div class="order_place_date">
-                                            <p>Order Placed: </p>
-                                            <time datetime="12-06-22">12 June 2022</time>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-2">
-                                        <div class="order_total_amount">
-                                            <p>Total: </p>
-                                            <span>EUR 4,500</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-3">
-                                        <div class="order_receiver">
-                                            <p>Dispatch to: </p>
                                             <div class="dropdown">
-                                                <span id="receiver_name" class="dropdown-toggle" type="button"
-                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Okiemute Gold
+                                                <span id="user" class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                                                    aria-expanded="false">
                                                 </span>
+                                                
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item" href="javascript:void(0)">Action</a></li>
-                                                    <li><a class="dropdown-item" href="javascript:void(0)">Action</a></li>
+                                                    <li><a class="dropdown-item" href="javascript:void(0)">All</a></li>
+                                                    <li><a class="dropdown-item" href="javascript:void(0)">None</a></li>
+                                                    <li><a class="dropdown-item" href="javascript:void(0)">Delete</a></li>
                                                 </ul>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <div class="order_reference">
-                                            <p>
-                                                Order: <span id="orderId"># 02B-888888-66666</span>
-                                            </p>
-                                            <div class="dropdown">
-                                                <a href="javascript:void(0)">View order details</a>
-                                                <span class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Invoice
-                                                </span>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item" href="javascript:void(0)">Action</a></li>
-                                                </ul>
-                                            </div>
+                                    </th>
+                                    <th scope="col"><span class="d-none d-md-inline-flex">Patient</span> ID</th>
+                                    <th scope="col"><span class="d-none d-md-inline-flex">Patient</span> Name</th>
+                                    <th scope="col"><span class="d-none d-md-inline-flex"></span>Edit</th>
+                                    <th scope="col">
+                                        <span class="d-none d-md-inline-flex delete_all">
+                                            <img src="/images/delete-bin-small.png" alt="delete icon" class="delete_icon"> All
+                                        </span>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="input agree_to_terms">
+                                            <input type="checkbox" name="selectPatientA" id="selectPatientA" aria-label="Select patient A">
                                         </div>
-                                    </div>
-                                </div>
+                                    </td>
+                                    <th scope="row">1</th>
+                                    <td>Patient A</td>
+                                    <td><i class="fa fa-edit edit_icon" aria-label="edit patient name"></i></td>
+                                    <td>
+                                        <img src="/images/delete-bin-small.png" alt="delete icon" class="delete_icon">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="input agree_to_terms">
+                                            <input type="checkbox" name="selectPatientB" id="selectPatientB" aria-label="Select patient B">
+                                        </div>
+                                    </td>
+                                    <th scope="row">2</th>
+                                    <td>Patient B</td>
+                                    <td><i class="fa fa-edit edit_icon" aria-label="edit patient name"></i></td>
+                                    <td>
+                                        <img src="/images/delete-bin-small.png" alt="delete icon" class="delete_icon">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="input agree_to_terms">
+                                            <input type="checkbox" name="selectPatientC" id="selectPatientC" aria-label="Select patient C">
+                                        </div>
+                                    </td>
+                                    <th scope="row">3</th>
+                                    <td>Patient C</td>
+                                    <td><i class="fa fa-edit edit_icon" aria-label="edit patient name"></i></td>
+                                    <td>
+                                        <img src="/images/delete-bin-small.png" alt="delete icon" class="delete_icon">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="input agree_to_terms">
+                                            <input type="checkbox" name="selectPatientD" id="selectPatientD" aria-label="Select patient D">
+                                        </div>
+                                    </td>
+                                    <th scope="row">4</th>
+                                    <td>Patient D</td>
+                                    <td><i class="fa fa-edit edit_icon" aria-label="edit patient name"></i></td>
+                                    <td>
+                                        <img src="/images/delete-bin-small.png" alt="delete icon" class="delete_icon">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
 
-                                <div class="row mt-3">
-                                    <div class="col-md-3">
-                                        <div class="order_status mb-2 mb-md-0">
-                                            <h2>
-                                                From: <span id="nurseName">Dr A</span>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="order_status">
-                                            <h2>
-                                                For: <span id="patientName">Patient A</span>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="card-body">
-                                <div class="my_orders">
-                                    <div class="row">
-                                        <div class="col-md-9">
-                                            <div class="delivery_status">
-                                                <h2>Delivered <time datetime="13-06-22">13 June 2022</time></h2>
-                                                <p>Parcel was handed to resident.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="order_delivery_ctas">
-                                                <button>Track package</button>
-                                            </div>
-                                        </div>
-                                    </div>
-        
-                                    <div class="product_item">
-                                        <div class="row">
-                                            <div class="col-md-3 col-lg-3">
-                                                <div class="product_image">
-                                                    <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
-                                                        <img src="images/products/Product-1.png" alt="Product-1">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5 col-lg-6">
-                                                <div class="product_description">
-                                                    <h3>
-                                                        <a href="javascript:void(0)" target="_blank"
-                                                            rel="noopener noreferrer">Lorem ipsum dolor sit
-                                                            amet consectetur adipisicing elit. Nisi, iusto.</a>
-                                                    </h3>
-        
-                                                    <p>
-                                                        Eligible for return until <time datetime="13-07-22">13 July 2022</time>
-                                                    </p>
-        
-                                                    <div class="order_ctas">
-                                                        <button>Buy it again</button>
-                                                        <button>View your item</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 col-lg-3">
-                                                <div class="order_delivery_ctas">
-                                                    <button>Return or Replace Items</button>
-                                                    <button>Share gift receipt</button>
-                                                    <button>Write a product review</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="card-footer bg-transparent">
-                                <div class="archive_button">
-                                    <button>Archive order</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-        
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="row">
-                                    <div class="col-12 col-lg-3">
-                                        <div class="order_place_date">
-                                            <p>Order Placed: </p>
-                                            <time datetime="12-06-22">12 June 2022</time>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-2">
-                                        <div class="order_total_amount">
-                                            <p>Total: </p>
-                                            <span>EUR 4,500</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-3">
-                                        <div class="order_receiver">
-                                            <p>Dispatch to: </p>
-                                            <div class="dropdown">
-                                                <span id="receiver_name" class="dropdown-toggle" type="button"
-                                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Okiemute Gold
-                                                </span>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item" href="javascript:void(0)">Action</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-4">
-                                        <div class="order_reference">
-                                            <p>
-                                                Order: <span id="orderId"># 02B-888888-66666</span>
-                                            </p>
-                                            <div class="dropdown">
-                                                <a href="javascript:void(0)">View order details</a>
-                                                <span class="dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Invoice
-                                                </span>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                                    <li><a class="dropdown-item" href="javascript:void(0)">Action</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row mt-3">
-                                    <div class="col-md-3">
-                                        <div class="order_status mb-2 mb-md-0">
-                                            <h2>
-                                                From: <span id="nurseName">Dr A</span>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3">
-                                        <div class="order_status">
-                                            <h2>
-                                                For: <span id="patientName">Patient B</span>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="card-body">
-                                <div class="my_orders">
-                                    <div class="row">
-                                        <div class="col-md-9">
-                                            <div class="delivery_status">
-                                                <h2>Delivered <time datetime="13-06-22">13 June 2022</time></h2>
-                                                <p>Parcel was handed to resident.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3">
-                                            <div class="order_delivery_ctas">
-                                                <button>Track package</button>
-                                            </div>
-                                        </div>
-                                    </div>
-        
-                                    <div class="product_item">
-                                        <div class="row">
-                                            <div class="col-md-3 col-lg-3">
-                                                <div class="product_image">
-                                                    <a href="javascript:void(0)" target="_blank" rel="noopener noreferrer">
-                                                        <img src="images/products/Product-1.png" alt="Product-1">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-5 col-lg-6">
-                                                <div class="product_description">
-                                                    <h3>
-                                                        <a href="javascript:void(0)" target="_blank"
-                                                            rel="noopener noreferrer">Lorem ipsum
-                                                            dolor sit
-                                                            amet consectetur adipisicing elit. Nisi, iusto.</a>
-                                                    </h3>
-        
-                                                    <p>
-                                                        Eligible for return until <time datetime="13-07-22">13 July 2022</time>
-                                                    </p>
-        
-                                                    <div class="order_ctas">
-                                                        <button>Buy it again</button>
-                                                        <button>View your item</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-4 col-lg-3">
-                                                <div class="order_delivery_ctas">
-                                                    <button>Return or Replace Items</button>
-                                                    <button>Share gift receipt</button>
-                                                    <button>Write a product review</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-        
-                            <div class="card-footer bg-transparent">
-                                <div class="archive_button">
-                                    <button>Archive order</button>
-                                </div>
-                            </div>
+                        <div class="buttons">
+                            <button class="btn btn-primary">Add Patient</button>
+                            <button class="btn btn-primary">Update</button>
                         </div>
                     </div>
                 </div>
@@ -804,7 +596,7 @@
                     class=" menu-item menu-item-type-post_type menu-item-object-page rmp-menu-item rmp-menu-top-level-item auth_mobile" role="none"></li>
                     <a href="orders.html" class="rmp-menu-item-link" role="menuitem">
                         <font style="vertical-align: inherit;">
-                            <font style="vertical-align: inherit;">My Orders</font>
+                            <font style="vertical-align: inherit;">Patient List</font>
                         </font>
                     </a></li>
                 <li id="rmp-menu-item-551"
